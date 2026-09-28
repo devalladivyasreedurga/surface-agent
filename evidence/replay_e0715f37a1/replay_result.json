@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "capability_id": "lookup_member_savings_balance",
+  "capability_version": 1,
+  "run_id": "e0715f37a1",
+  "outputs": {
+    "savings_balance": "$15920.44"
+  },
+  "business_outcome": null,
+  "hard_failure": null,
+  "recovery_events": [
+    {
+      "step_id": "step_2",
+      "condition": "transient_slow_load",
+      "action_taken": "transient_slow_load",
+      "attempt": 1
+    }
+  ],
+  "steps_completed": 3,
+  "steps_total": 3
+}

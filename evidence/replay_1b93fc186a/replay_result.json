@@ -1,0 +1,19 @@
+{
+  "status": "hard_failure",
+  "capability_id": "lookup_member_savings_balance",
+  "capability_version": 1,
+  "run_id": "1b93fc186a",
+  "outputs": {},
+  "business_outcome": null,
+  "hard_failure": {
+    "step_id": "step_2",
+    "expected": "Reached a page where the value to extract is present (if not, replay will check for a known business outcome before failing).",
+    "observed": "expected element not found (accessibility:cell|Savings Balance Value)",
+    "error_code": "checkpoint_failed",
+    "message": "expected element not found (accessibility:cell|Savings Balance Value)",
+    "evidence_ref": "evidence/replay_1b93fc186a/screenshots/1790576036432_hard_failure_step_2_98554b.png"
+  },
+  "recovery_events": [],
+  "steps_completed": 1,
+  "steps_total": 3
+}

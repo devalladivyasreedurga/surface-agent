@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0",
+  "capability_id": "lookup_member_savings_balance",
+  "capability_version": 1,
+  "name": "Look up member savings balance",
+  "description": "Looks up a member by ID and retrieves their savings balance from the teller console.",
+  "target": {
+    "app_key": "mockbank",
+    "base_url": "http://127.0.0.1:8000",
+    "surface_type": "web"
+  },
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "description": "Runtime value for 'Member ID'",
+      "required": true,
+      "example": "10001"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "string",
+      "description": "Extracted from 'Savings Balance Value'",
+      "source_step_id": "step_3"
+    }
+  ],
+  "steps": [
+    {
+      "id": "step_1",
+      "description": "Fill 'Member ID' with {{input.member_id}}",
+      "action": {
+        "type": "fill",
+        "target": {
+          "primary": {
+            "strategy": "accessibility",
+            "value": "textbox|Member ID",
+            "confidence": "high",
+            "note": null
+          },
+          "fallbacks": [
+            {
+              "strategy": "semantic",
+              "value": "Member ID",
+              "confidence": "medium",
+              "note": null
+            }
+          ]
+        },
+        "value": "{{input.member_id}}",
+        "timeout_ms": 15000,
+        "reasoning": null
+      },
+      "risk": "safe",
+      "checkpoint": null,
+      "extract_as": null
+    },
+    {
+      "id": "step_2",
+      "description": "Click 'Search'",
+      "action": {
+        "type": "click",
+        "target": {
+          "primary": {
+            "strategy": "accessibility",
+            "value": "button|Search",
+            "confidence": "high",
+            "note": null
+          },
+          "fallbacks": [
+            {
+              "strategy": "semantic",
+              "value": "Search",
+              "confidence": "medium",
+              "note": null
+            }
+          ]
+        },
+        "value": null,
+        "timeout_ms": 15000,
+        "reasoning": null
+      },
+      "risk": "safe",
+      "checkpoint": {
+        "description": "Reached a page where the value to extract is present (if not, replay will check for a known business outcome before failing).",
+        "expect_url_contains": null,
+        "expect_element": {
+          "strategy": "accessibility",
+          "value": "cell|Savings Balance Value",
+          "confidence": "high",
+          "note": null
+        },
+        "expect_text_contains": null
+      },
+      "extract_as": null
+    },
+    {
+      "id": "step_3",
+      "description": "Extract 'Savings Balance Value' as output 'savings_balance'",
+      "action": {
+        "type": "extract",
+        "target": {
+          "primary": {
+            "strategy": "accessibility",
+            "value": "cell|Savings Balance Value",
+            "confidence": "high",
+            "note": null
+          },
+          "fallbacks": [
+            {
+              "strategy": "semantic",
+              "value": "Savings Balance Value",
+              "confidence": "medium",
+              "note": null
+            }
+          ]
+        },
+        "value": "savings_balance",
+        "timeout_ms": 15000,
+        "reasoning": null
+      },
+      "risk": "safe",
+      "checkpoint": null,
+      "extract_as": "savings_balance"
+    }
+  ],
+  "success_checkpoint": {
+    "description": "Reached the expected final page (/members/{{input.member_id}}) with the extracted value's element present.",
+    "expect_url_contains": "/members/{{input.member_id}}",
+    "expect_element": {
+      "strategy": "accessibility",
+      "value": "cell|Savings Balance Value",
+      "confidence": "high",
+      "note": null
+    },
+    "expect_text_contains": null
+  },
+  "created_at": "2026-09-28T06:09:41.356077Z",
+  "created_from_run_id": "d7bc2d199c",
+  "additional_run_ids": [
+    "2c79ebe834"
+  ],
+  "review_notes": null
+}

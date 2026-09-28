@@ -1,0 +1,10 @@
+{
+  "run_id": "2c79ebe834",
+  "stop_reason": "success",
+  "goal": "Look up member 10002 and read the savings balance",
+  "steps_taken": 3,
+  "escalation_id": null,
+  "capability_slug": "lookup_member_savings_balance",
+  "capability_name": "Look up member savings balance",
+  "capability_description": "Looks up a member by ID and retrieves their savings balance."
+}

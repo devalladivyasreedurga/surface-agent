@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Member {{ member_id }}{% endblock %}
+{% block content %}
+
+{% if restricted %}
+  <h1>Member {{ member_id }}</h1>
+  <table class="notice-table"><tr><td class="notice-error">
+    Access denied: this member's record is restricted (compliance hold). Contact a supervisor for override.
+  </td></tr></table>
+
+{% elif notice %}
+  <h1>Member {{ member_id }}</h1>
+  <div role="alertdialog" aria-label="Policy Notice">
+    <table class="notice-table">
+      <tr><td>
+        <p>Policy Notice: this account was flagged for a routine review. Dismiss to continue to the account record.</p>
+        <form action="/members/{{ member_id }}/dismiss" method="post">
+          <button type="submit">Dismiss</button>
+        </form>
+      </td></tr>
+    </table>
+  </div>
+
+{% else %}
+  <h1>{{ member.name }}</h1>
+  <table>
+    <tr><td>Member ID</td><td aria-label="Member ID Value">{{ member_id }}</td></tr>
+    <tr><td>Savings Balance</td><td aria-label="Savings Balance Value">${{ member.savings_balance }}</td></tr>
+    <tr><td>Checking Balance</td><td aria-label="Checking Balance Value">${{ member.checking_balance }}</td></tr>
+  </table>
+  <p><a href="/members/{{ member_id }}/sub-account/new">Open Sub-Account</a></p>
+{% endif %}
+
+<p><a href="/">Back to Search</a></p>
+{% endblock %}

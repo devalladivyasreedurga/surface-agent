@@ -1,0 +1,16 @@
+{
+  "status": "business_outcome",
+  "capability_id": "lookup_member_savings_balance",
+  "capability_version": 1,
+  "run_id": "9f562ac61c",
+  "outputs": {},
+  "business_outcome": {
+    "code": "VALIDATION_ERROR",
+    "message": "Member ID must contain only digits",
+    "step_id": "step_2"
+  },
+  "hard_failure": null,
+  "recovery_events": [],
+  "steps_completed": 1,
+  "steps_total": 3
+}

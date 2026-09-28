@@ -1,0 +1,16 @@
+{
+  "status": "business_outcome",
+  "capability_id": "lookup_member_savings_balance",
+  "capability_version": 1,
+  "run_id": "09c161ff1a",
+  "outputs": {},
+  "business_outcome": {
+    "code": "PERMISSION_DENIED",
+    "message": "Access denied: this member's record is restricted",
+    "step_id": "step_2"
+  },
+  "hard_failure": null,
+  "recovery_events": [],
+  "steps_completed": 1,
+  "steps_total": 3
+}

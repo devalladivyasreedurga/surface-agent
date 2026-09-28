@@ -1,0 +1,9 @@
+body { font-family: Tahoma, Geneva, sans-serif; font-size: 13px; background: #d9d9d9; margin: 0; }
+table.layout { width: 100%; border-collapse: collapse; }
+td.banner { background: #003366; color: white; padding: 8px 12px; font-weight: bold; }
+td.content { padding: 16px; background: #f2f2f2; }
+table { border-collapse: collapse; margin-bottom: 12px; }
+td { padding: 4px 8px; vertical-align: top; }
+table:not(.layout) td { border: 1px solid #999; }
+.notice-table td.notice-error { border: 1px solid #990000; background: #ffe5e5; color: #660000; padding: 8px; }
+h1 { font-size: 16px; }

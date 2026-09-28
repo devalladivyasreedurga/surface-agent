@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Review & Confirm{% endblock %}
+{% block content %}
+<h1>Review &amp; Confirm New Sub-Account</h1>
+<table>
+  <tr><td>Member</td><td>{{ member.name if member else member_id }}</td></tr>
+  <tr><td>Account Type</td><td>{{ account_type }}</td></tr>
+  <tr><td>Initial Deposit</td><td>${{ initial_deposit }}</td></tr>
+</table>
+<form action="/members/{{ member_id }}/sub-account/confirm" method="post">
+  <input type="hidden" name="account_type" value="{{ account_type }}">
+  <input type="hidden" name="initial_deposit" value="{{ initial_deposit }}">
+  <button type="submit">Confirm &amp; Open Account</button>
+</form>
+{% endblock %}

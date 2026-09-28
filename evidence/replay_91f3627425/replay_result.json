@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "capability_id": "lookup_member_savings_balance__escalation_demo",
+  "capability_version": 1,
+  "run_id": "91f3627425",
+  "outputs": {
+    "savings_balance": "$4230.55"
+  },
+  "business_outcome": null,
+  "hard_failure": null,
+  "recovery_events": [],
+  "steps_completed": 3,
+  "steps_total": 3
+}

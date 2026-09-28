@@ -1,0 +1,11 @@
+{
+  "allowed_domains": ["localhost", "127.0.0.1"],
+  "allowed_routes": [],
+  "allowed_action_types": ["navigate", "click", "fill", "extract", "wait"],
+  "risky_keywords": [
+    "transfer", "wire", "withdraw", "close account", "delete", "remove account",
+    "submit payment", "pay now", "confirm payment", "authorize", "send money",
+    "move funds", "charge card"
+  ],
+  "irreversible_action_policy": "require_confirmation"
+}

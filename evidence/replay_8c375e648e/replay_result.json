@@ -1,0 +1,16 @@
+{
+  "status": "business_outcome",
+  "capability_id": "lookup_member_savings_balance",
+  "capability_version": 1,
+  "run_id": "8c375e648e",
+  "outputs": {},
+  "business_outcome": {
+    "code": "MEMBER_NOT_FOUND",
+    "message": "No member found with ID 99999",
+    "step_id": "step_2"
+  },
+  "hard_failure": null,
+  "recovery_events": [],
+  "steps_completed": 1,
+  "steps_total": 3
+}

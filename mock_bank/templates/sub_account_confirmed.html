@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Account Opened{% endblock %}
+{% block content %}
+<h1>Sub-Account Opened</h1>
+<p>A new {{ account_type }} sub-account was opened for member {{ member_id }}.</p>
+<p><a href="/members/{{ member_id }}">Back to Member</a></p>
+{% endblock %}

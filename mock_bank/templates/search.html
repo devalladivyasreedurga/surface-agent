@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Member Search{% endblock %}
+{% block content %}
+<h1>Member Search</h1>
+
+{% if error %}
+<table class="notice-table"><tr><td class="notice-error">{{ error }}</td></tr></table>
+{% endif %}
+
+<form action="/members/search" method="get">
+  <table>
+    <tr>
+      <td><label for="member_id">Member ID</label></td>
+      <td><input type="text" id="member_id" name="member_id" placeholder="e.g. 10001"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><button type="submit">Search</button></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
