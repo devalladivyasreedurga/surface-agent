@@ -1,4 +1,4 @@
-# Computer-Use Automation System
+# Surface Agent
 
 A small, real, end-to-end vertical slice: an LLM-driven discovery agent that
 operates a live web app, canonicalizes what it did into a typed, versioned,
